@@ -11,10 +11,12 @@ services:
     volumes:
       - ./backend:/backend
     command: >
-      sh -c "python manage.py runserver 0.0.0.0:8000"
+      sh -c "pytest &&
+             python manage.py migrate &&
+             python manage.py runserver 0.0.0.0:8000"
     environment:  
       - DB_HOST=db
-      - DB_Name=devdb
+      - DB_NAME=devdb
       - DB_USER=devuser
       - DB_PASS=changeme
     depends_on:
