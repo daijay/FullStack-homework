@@ -18,7 +18,7 @@ jobs:
 
 
       - name: Test
-        run: docker compose run --rm backend sh -c "pytest backend/tests -p no:cacheprovider "
+        run: docker compose run --rm backend sh -c "pytest -p no:cacheprovider"
 
       - name: lint
         run: docker compose run --rm backend sh -c "flake8"
