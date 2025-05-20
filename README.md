@@ -95,24 +95,5 @@ docker-compose run --rm backend sh -c "pytest tests/hire/test_hire_api.py"
 
 ---
 
-## Project Structure
 
-```
-.
-├── backend
-│   ├── hire
-│   │   ├── models.py       # Job posting models
-│   │   ├── views.py        # Job posting views
-│   │   ├── api.py          # Job posting API endpoints
-│   │   └── tests           # Job posting tests
-│   ├── user
-│   │   ├── schemas.py      # User schemas
-│   │   ├── views.py        # User views
-│   │   └── api.py          # User API endpoints
-│   └── settings.py         # Django settings
-├── docker-compose.yml      # Docker Compose configuration
-└── README.md               # Project documentation
-```
-
----
 
