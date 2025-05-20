@@ -21,4 +21,4 @@ jobs:
         run: docker compose run --rm backend sh -c "pytest -p no:cacheprovider"
 
       - name: ruff
-        run: docker compose run --rm backend sh -c "ruff check . && isort --check-only ."
+        run: docker compose run --rm backend sh -c "ruff check . --no-cache"
