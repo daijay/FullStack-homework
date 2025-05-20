@@ -15,5 +15,12 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Set permissions for pytest cache
+        run: docker compose run --rm backend sh -c "mkdir -p /backend/.pytest_cache && chmod -R 777 /backend/.pytest_cache"
+
       - name: Test
         run: docker compose run --rm backend sh -c "pytest"
+
+      - name: lint
+        run: docker compose run --rm backend sh -c "flake8"
