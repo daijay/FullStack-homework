@@ -5,6 +5,7 @@ from django.core.exceptions import ValidationError
 from django.db import models
 from hire.models import jobs_post
 from ninja import Field, Schema
+from pydantic import BaseModel
 
 
 class _AuthorInfo(Schema):
@@ -25,9 +26,14 @@ class CreateJobRequest(BaseJobSchema):
     company_name: str = Field( example="Tech Company")
 
 
-class UpdateJobRequest(BaseJobSchema):
-    pass  # 不允許更新 company_name
-
+class UpdateJobRequest(BaseModel):
+    title: Optional[str]
+    description: Optional[str]
+    location: Optional[str]
+    salary_range: Optional[str]
+    P_date: Optional[datetime]
+    E_date: Optional[datetime]
+    skills: Optional[list[str]]
 
 class JobResponse(BaseJobSchema):
     job_id: int

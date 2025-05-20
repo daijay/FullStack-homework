@@ -3,8 +3,7 @@ from typing import List, Optional, Type
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractUser, Group
-from ninja_extra import status
-from ninja_extra.exceptions import APIException
+from django.core.exceptions import ValidationError
 from ninja_schema import ModelSchema, Schema
 from pydantic import field_validator
 
@@ -30,9 +29,7 @@ class CreateUserSchema(ModelSchema):
     @field_validator("username")
     def validate_name(cls, value_data):
         if UserModel.objects.filter(username__icontains=value_data).exists():
-            raise APIException(
-                "Username already exist", status_code=status.HTTP_400_BAD_REQUEST
-            )
+            raise ValidationError("Username already exist", code=400)
         return value_data
     def create(self) -> Type[AbstractUser]:
         return UserModel.objects.create_user(**self.dict())
