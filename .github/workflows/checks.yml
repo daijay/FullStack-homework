@@ -20,5 +20,5 @@ jobs:
       - name: Test
         run: docker compose run --rm backend sh -c "pytest -p no:cacheprovider"
 
-      - name: lint
-        run: docker compose run --rm backend sh -c "flake8"
+      - name: ruff
+        run: docker compose run --rm backend sh -c "ruff check . && isort --check-only ."

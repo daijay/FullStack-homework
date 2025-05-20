@@ -4,8 +4,7 @@ from typing import Optional
 from django.core.exceptions import ValidationError
 from django.db import models
 from hire.models import jobs_post
-from ninja import Field, FilterSchema, Schema
-from pydantic import model_validator
+from ninja import Field, Schema
 
 
 class _AuthorInfo(Schema):

@@ -1,7 +1,6 @@
 #from ninja import NinjaAPI
-from ninja import Redoc, Swagger
+from ninja import Swagger
 from ninja_extra import NinjaExtraAPI
-from ninja_jwt.controller import NinjaJWTDefaultController
 
 api = NinjaExtraAPI(title="Hire Platform API",
     description="API for the Hire Platform",

@@ -1,5 +1,5 @@
 from datetime import datetime
-from random import randint, random
+from random import random
 
 import pytest
 from django.contrib.auth.models import User

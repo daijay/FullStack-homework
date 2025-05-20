@@ -3,7 +3,6 @@ from typing import List, Optional, Type
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractUser, Group
-from ninja import ModelSchema, Schema
 from ninja_extra import status
 from ninja_extra.exceptions import APIException
 from ninja_schema import ModelSchema, Schema
