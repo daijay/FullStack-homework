@@ -1,0 +1,10 @@
+{
+    "title": "Software Engineer",
+    "description": "Develop and maintain software.",
+    "location": "Remote",
+    "salary_range": "50k-70k",
+    "company_name": "Tech Corp",
+    "P_date": "2025-05-16",
+    "E_date": "2025-05-16T14:54:38Z",
+    "skills": ["Python", "Django", "PostgreSQL"]
+  }

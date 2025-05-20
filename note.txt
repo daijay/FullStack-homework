@@ -1,0 +1,11 @@
+curl -X POST -H "Content-Type: application/json" -d '{"username": "jacky", "password": "pcst1240."}' http://localhost:8000/api/token/pair
+
+
+{"username": "jacky", "refresh": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NzI5OTg2MiwiaWF0IjoxNzQ3MjEzNDYyLCJqdGkiOiJjNWI0M2NhODQ1NzA0OTE4YjNhYzU3ZTc0N2ViNDEyYyIsInVzZXJfaWQiOjJ9.kmae35ppwliARvpVlXvmTfSabWe4y-y5zWBpLFFi0fI",
+ "access": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MjEzNzYyLCJpYXQiOjE3NDcyMTM0NjIsImp0aSI6Ijc1YTRkOGE1MzdlMzRjOTNhZjZmODI3YzRiMWJmOGIyIiwidXNlcl9pZCI6Mn0.ka6D6CAl357HexYOdUC9zGA86ppM4khb8UHD0VtXfqA"}
+
+curl \
+  -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzQ3MjEzMDgzLCJpYXQiOjE3NDcyMTI3ODMsImp0aSI6IjQ5ZWQ3MTY5MzJlMzQ1MmU5MzZhNzdlMGUzZmIxYTk2IiwidXNlcl9pZCI6Mn0.Mk2sHEDVNWvE_4s1YyZd3DURTDexpvV3upXR1rHO6UU" \
+  http://localhost:8000/api/some-protected-view/
+
+curl -X POST -H "Content-Type: application/json" -d '{"refresh":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc0NzI5OTE4MywiaWF0IjoxNzQ3MjEyNzgzLCJqdGkiOiJjZjM5ZmEwM2JkYjA0ZWFhODM0ZmFiMjhlNWM4NGM5MyIsInVzZXJfaWQiOjJ9.vxdypYkSB-kMdAm3XYmvijeY59q9186F9yGCd5SS5eI"}' http://localhost:8000/api/token/refresh/
